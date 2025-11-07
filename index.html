@@ -208,7 +208,12 @@
         .search-box {
             position: relative;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem; /* Increased bottom margin from 2rem to 3rem */
+        }
+
+        /* Add space above the Start Exploring button when it follows a search box */
+        .search-box + .btn {
+            margin-top: 1rem;
         }
 
         .search-input {
@@ -1297,15 +1302,30 @@
             }
 
             /* Search Page */
+            .container {
+                padding: 0 1.25rem; /* Increase padding on mobile */
+            }
+
             .search-box {
                 max-width: 100%;
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                margin: 0 auto; /* Center the search box */
+                width: 100%; /* Take full width of container */
+            }
+
+            .search-input {
+                flex: 1;
+                min-width: 0; /* Allows input to shrink below its default min-width */
             }
 
             .search-box button {
-                position: static;
-                transform: none;
-                width: 100%;
-                margin-top: 0.75rem;
+                position: relative; /* Change from static to relative */
+                padding: 0.75rem 1rem;
+                height: auto;
+                min-width: auto; /* Allow button to be smaller */
+                white-space: nowrap;
             }
         }
 
@@ -1345,21 +1365,20 @@
             }
 
             .logo {
-                font-size: 1.25rem;
+                font-size: 1.125rem; /* Slightly smaller font size for mobile */
+                gap: 0.35rem; /* Reduce gap between icon and text */
             }
 
             .logo svg {
-                width: 28px;
-                height: 28px;
+                width: 24px; /* Slightly smaller icon */
+                height: 24px;
             }
 
             .header-content {
                 padding: 0.875rem;
             }
 
-            .logo span {
-                display: none; /* Hide text on very small screens, show only icon */
-            }
+            /* Remove the rule that hides the logo text */
 
             .nav {
                 top: 60px;
